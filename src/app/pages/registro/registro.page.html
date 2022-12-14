@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar style="color: black;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: white;">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="color: black;">Registro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup] = "formularioRegistro" (keyup.enter)="CrearUsuario()">
+        <ion-item>
+          <ion-label position="floating">Nombre:</ion-label>
+          <ion-input type="text" formControlName="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo:</ion-label>
+          <ion-input type="text" formControlName="correo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password:</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirma Password:</ion-label>
+          <ion-input type="password" formControlName="confirmaPass"></ion-input>
+          <div *ngIf="f.confirmaPass.errors.mustMatch"> La contrasena debe coincidir</div>
+        </ion-item>
+        <br>
+        <ion-button (click)="CrearUsuario()" color="warning" expand="block" shape="round" routerLink="/login">
+          Registrarse
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar style="color: black;">
+    <ion-img style="width: 150px; height: 100px;" slot="end" src="assets/duocuc.png"></ion-img>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="yellow">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <center><img src="assets/dracule.jfif"></center>
+    <ion-card-header>
+      <ion-badge> <tr *ngFor="let us of usuarios; let i-index">
+        <td style="font-size: x-large;"> Bienvenid@ {{us.nomUsuario}}!</td>
+      </tr></ion-badge>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Nombre:</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Correo:</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

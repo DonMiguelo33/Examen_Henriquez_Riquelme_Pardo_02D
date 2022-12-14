@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Codigo QR</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-text-center">
+  
+    <p class="parrafo">
+      Ingrese los datos. 
+      </p> 
+
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label position="fixed">Asignatura: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.nom" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Fecha: </ion-label>
+          <ion-input type="date" [(ngModel)]="usuario.fec" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Sección: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.sec" required></ion-input>
+        </ion-item>
+
+        <ion-button 
+            color="danger"
+            expand="block" 
+            shape="round"
+            class="ion-margin" 
+            (click)="generaScan()">
+            Generate QR Code  
+        </ion-button>
+
+        <qrcode 
+          [qrdata]="qrCodeString" 
+          [width]="220" 
+          [errorCorrectionLevel]="'M'">
+        </qrcode>
+
+
+      </ion-card-content>
+
+    <ion-button 
+      color="warning"
+      expand="block"
+      shape="round" 
+      class="ion-margin" 
+      (click)="verScan()">
+          Ver QR Code  
+    </ion-button>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">Scan Result: {{scannedResult}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-text-wrap">Scan Result: {{scannedResult2}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-text-wrap">Scan Result: {{scannedResult3}}</ion-label>
+    </ion-item>
+

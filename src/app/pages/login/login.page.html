@@ -1,0 +1,33 @@
+<ion-toolbar style="color: black;">
+  <ion-title style="color: white">DuocUC</ion-title>
+  <ion-buttons slot="end">
+    <ion-button [routerLink]="['/registro']" style="color: white;">Registrarse
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="color: black;">Login Docente</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <form [formGroup] = "formularioLogin">
+
+        <ion-item>
+          <ion-label position="floating" style="color: white"> Correo: </ion-label>
+          <ion-input formControlName="correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating"> Password: </ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+      </form>
+      <br>
+      <ion-button (click)="Ingresar()" color="warning" expand="block" shape="round">
+        Ingresar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
